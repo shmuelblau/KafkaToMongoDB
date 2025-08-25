@@ -1,13 +1,30 @@
 import logging
 from fastapi import FastAPI
+from fastapi.responses import JSONResponse
+from models.config import *
+from models.Manager import Manager
+from models.logger import get_logger
 
+log = get_logger()
 
 app = FastAPI()
 
+manager = Manager(connection_string , dbname , collection , kafka_host)
 
 @app.get("/")
 def home():
-    return "הכל עובד"
+    try:
+        data = manager.start()
+
+        log.info("send a 20 masages to kafka")
+        return JSONResponse(content=data , status_code=200)
+    
+    except Exception as e:
+
+        log.info("fiald to send")
+        log.info(f"error:{e}")
+
+        return "fiald to send"
 
 
 if __name__ == "__main__":

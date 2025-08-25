@@ -33,8 +33,8 @@ class DataLoader:
 
         newsgroups_interesting=fetch_20newsgroups(subset='all',categories=interesting_cats)
         newsgroups_not_interesting=fetch_20newsgroups(subset='all',categories=not_interesting_cats)
-        newsgroups_interesting = [i for i in newsgroups_interesting]
-        newsgroups_not_interesting = [i for i in newsgroups_not_interesting]
+        newsgroups_interesting = [i for i in newsgroups_interesting.data]
+        newsgroups_not_interesting = [i for i in newsgroups_not_interesting.data]
 
 
         data = {"interesting" :newsgroups_interesting , "not_interesting":newsgroups_not_interesting}

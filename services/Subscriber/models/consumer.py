@@ -22,7 +22,7 @@ class Consumer:
         self.consumer
 
         for i in self.consumer:
-            result += i.value
+            result.append(i.value)
 
         return result
 

@@ -1,4 +1,4 @@
 pymongo
 uvicorn
 fastapi
-kafka
+kafka-python

@@ -19,7 +19,7 @@ class DBLoader:
     def insert(self , data:list) -> None:
 
         
-        log.info(f"start load data len ={len(data)}")
+        log.info(f"start load data len ={len(data)} type:{type(data)} type[0]:{type(data[0])}")
 
         try:
             

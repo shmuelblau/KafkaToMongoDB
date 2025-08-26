@@ -17,6 +17,8 @@ class Manager:
 
         data:dict[str , list]  = self.get_masages(limit)
 
+        log.info(f"data to send = interesting:{len(data['interesting'])} not_interesting:{len(data['not_interesting'])} ")
+
         self.producer.send_all(data)
 
 

@@ -1,4 +1,4 @@
-sklearn.datasets
+scikit-learn
 uvicorn
 fastapi
-kafka
+kafka-python

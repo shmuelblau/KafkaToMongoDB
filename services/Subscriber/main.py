@@ -15,9 +15,12 @@ manager = Manager(connection_string , dbname , collection , kafka_host)
 def home():
     try:
         data = manager.start()
+        
+        data = [str(d) for d in data]
 
-        log.info("send a 20 masages to kafka")
-        return JSONResponse(content=data , status_code=200)
+        return data
+
+        
     
     except Exception as e:
 

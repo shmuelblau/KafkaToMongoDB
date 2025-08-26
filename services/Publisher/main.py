@@ -7,9 +7,10 @@ from models.logger import get_logger
 log = get_logger()
 
 app = FastAPI()
-
+log.info(f"HOST = {host}")
 manager = Manager(host)
 
+log.info(f"HOST = {host}")
 @app.get("/")
 def home():
     try:
